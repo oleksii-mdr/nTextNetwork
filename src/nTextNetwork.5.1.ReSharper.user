@@ -1,0 +1,92 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="09A80809-9649-4315-814F-4BD861312B03/d:Util/f:Precondition.cs" caret="377" fromTop="11" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:ITextStatistics.cs" caret="231" fromTop="10" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:TextStatistics.cs" caret="696" fromTop="17" />
+      <File id="9E4096AE-7A51-4DC0-ACFE-A574190303DA/f:TextStatisticsTest.cs" caret="258" fromTop="11" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:ITextStatistics.cs" caret="134" fromTop="6" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:TextStatistics.cs" caret="361" fromTop="10" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/d:Util/f:Precondition.cs" caret="377" fromTop="18" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/d:Util/f:Precondition.cs" caret="377" fromTop="17" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/d:Util/f:Precondition.cs" caret="85" fromTop="4" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:TextStatistics.cs" caret="0" fromTop="0" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:ITextStatistics.cs" caret="451" fromTop="12" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:TextStatistics.cs" caret="129" fromTop="6" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:TextStatistics.cs" caret="559" fromTop="18" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:ITextStatistics.cs" caret="231" fromTop="10" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:TextStatistics.cs" caret="323" fromTop="12" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:TextStatistics.cs" caret="323" fromTop="12" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/d:Util/f:Precondition.cs" caret="377" fromTop="11" />
+      <File id="09A80809-9649-4315-814F-4BD861312B03/f:TextStatistics.cs" caret="729" fromTop="17" />
+      <File id="9E4096AE-7A51-4DC0-ACFE-A574190303DA/f:TextStatisticsTest.cs" caret="41" fromTop="2" />
+      <File id="9E4096AE-7A51-4DC0-ACFE-A574190303DA/f:TextStatisticsTest.cs" caret="760" fromTop="24" />
+      <File id="9E4096AE-7A51-4DC0-ACFE-A574190303DA/f:TextStatisticsTest.cs" caret="692" fromTop="22" />
+      <File id="9E4096AE-7A51-4DC0-ACFE-A574190303DA/f:TextStatisticsTest.cs" caret="294" fromTop="11" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="uint" priority="0" />
+      <Item value="string" priority="5" />
+      <Item value="Text" priority="0" />
+      <Item value="text" priority="0" />
+      <Item value="if" priority="1" />
+      <Item value="throw" priority="1" />
+      <Item value="new" priority="3" />
+      <Item value="ArgumentNullException" priority="1" />
+      <Item value="ITextStatistics`0" priority="0" />
+      <Item value="internal" priority="0" />
+      <Item value="static" priority="0" />
+      <Item value="void" priority="0" />
+      <Item value="T`0" priority="0" />
+      <Item value="arg" priority="1" />
+      <Item value="String`0" priority="1" />
+      <Item value="IDictionary" priority="0" />
+      <Item value="set" priority="0" />
+      <Item value="IEnumerable" priority="0" />
+      <Item value="IList" priority="0" />
+      <Item value="PunctuationLiterals" priority="0" />
+      <Item value="public" priority="0" />
+      <Item value="char" priority="2" />
+      <Item value="return" priority="0" />
+      <Item value="literals" priority="0" />
+      <Item value="TextStatistics" priority="0" />
+      <Item value="ExpectedException" priority="0" />
+      <Item value="typeof" priority="0" />
+      <Item value="Assert`0" priority="0" />
+      <Item value="Predicate" priority="0" />
+      <Item value="PreconditionTest`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="IsNullOrEmpty`0" priority="1" />
+      <Item value="Empty" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@nText.Core.Util.Precondition`1">
+      <Item value="EnsureNotNullOrEmpty`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="Fail`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
