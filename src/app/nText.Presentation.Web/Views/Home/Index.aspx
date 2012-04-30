@@ -7,6 +7,7 @@
     <title></title>
 </head>
 <body>
-    Hello world
+    Hello world<br />
+    Test message
 </body>
 </html>
