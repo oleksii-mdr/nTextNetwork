@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E0CD1B8E-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nText.Core.Test", "test\nText.Core.Test\nText.Core.Test.csproj", "{9E4096AE-7A51-4DC0-ACFE-A574190303DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nText.Presentation.Web", "app\nText.Presentation.Web\nText.Presentation.Web.csproj", "{B0B22575-E0F4-4A5E-9B02-2D735DF43C96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{9E4096AE-7A51-4DC0-ACFE-A574190303DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E4096AE-7A51-4DC0-ACFE-A574190303DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E4096AE-7A51-4DC0-ACFE-A574190303DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B22575-E0F4-4A5E-9B02-2D735DF43C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B22575-E0F4-4A5E-9B02-2D735DF43C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B22575-E0F4-4A5E-9B02-2D735DF43C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B22575-E0F4-4A5E-9B02-2D735DF43C96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{09A80809-9649-4315-814F-4BD861312B03} = {E1B5F5D9-66DE-4E78-9FE5-22653919EE81}
+		{B0B22575-E0F4-4A5E-9B02-2D735DF43C96} = {E1B5F5D9-66DE-4E78-9FE5-22653919EE81}
 		{9E4096AE-7A51-4DC0-ACFE-A574190303DA} = {E0CD1B8E-CBC6-4C80-BB1F-2D8280BFB5C7}
 	EndGlobalSection
 EndGlobal
