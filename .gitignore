@@ -20,6 +20,8 @@
 *.sbr
 *.scc
 *.tokens
+*sln.docstates
+*.suo
 [Bb]in
 [Db]ebug*/
 obj/
