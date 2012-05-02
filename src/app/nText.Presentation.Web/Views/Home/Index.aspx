@@ -8,6 +8,6 @@
 </head>
 <body>
     Hello world<br />
-    Test message. Changed!
+    Test message.
 </body>
 </html>
