@@ -10,5 +10,12 @@ namespace nText.Core.Util
                 throw new ArgumentNullException(argName,
                     "Precondition violated string is null or empty");
         }
+
+        internal static void EnsureNotNull<T>(string argName, T argValue) where T : class
+        {
+            if (argValue == null)
+                throw new ArgumentNullException(argName,
+                    "Precondition violated string is null or empty");
+        }
     }
 }
