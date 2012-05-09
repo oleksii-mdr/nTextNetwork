@@ -1,8 +1,8 @@
 using System.IO;
 
-namespace nText.Core
+namespace nText.Core.Interface
 {
-    public interface IStreamConverter
+    internal interface IStreamConverter
     {
         string ToText(Stream stream);
     }

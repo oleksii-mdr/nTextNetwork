@@ -1,10 +1,12 @@
 using System;
 using System.Configuration;
 using System.IO;
+using nText.Core.Impl;
+using nText.Core.Interface;
 using nText.Core.Test.Util;
 using NUnit.Framework;
 
-namespace nText.Core.Test
+namespace nText.Core.Test.Impl
 {
     [TestFixture]
     public class StreamConverterText
@@ -19,11 +21,12 @@ namespace nText.Core.Test
         }
 
         [Test]
-        public void ToText_StreamIsEmpty_EmptyString()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ToText_StreamIsEmpty_ArgumentNullException()
         {
             IStreamConverter c = new StreamConverter();
-            string actual = c.ToText(new MemoryStream());
-            Assert.IsEmpty(actual);
+            c.ToText(new MemoryStream());
+            Assert.Fail("Shouldn't reach this code");
         }
 
         [Test]

@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Configuration;
 using System.IO;
+using nText.Core.Interface;
 using nText.Core.Util;
 
-namespace nText.Core
+namespace nText.Core.Impl
 {
-    public class StreamConverter : IStreamConverter
+    internal class StreamConverter : IStreamConverter
     {
         public const int DEFAULT_MAX_STREAM_SIZE = 1000000;
 
         public string ToText(Stream stream)
         {
             Precondition.EnsureNotNull("stream", stream);
-
-            if (stream.Length == 0)
-                return String.Empty;
-
+            Precondition.EnsureMoreThanZero("stream.Length", stream.Length);
+            
             int max;
             try
             {
@@ -26,7 +25,7 @@ namespace nText.Core
                     max = DEFAULT_MAX_STREAM_SIZE;
                 }
             }
-            catch (ConfigurationErrorsException ex)
+            catch (ConfigurationErrorsException)
             {
                 max = DEFAULT_MAX_STREAM_SIZE;
             }

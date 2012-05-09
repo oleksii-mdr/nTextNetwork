@@ -1,15 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using nText.Core.Interface;
 using nText.Core.Util;
 
-namespace nText.Core
+namespace nText.Core.Impl
 {
     public class TextStatistics : ITextStatistics
     {
+        public TextStatistics()
+        {
+            PunctuationLiterals = new List<char>();
+            WordFrequencyDictionary = new Dictionary<string, int>();
+            PunctuationFrequencyDictionary = new Dictionary<string, int>();
+        }
+
         public TextStatistics(string text)
+            : this()
         {
             Precondition.EnsureNotNullOrEmpty("text", text);
             Text = text;
+        }
+
+        internal static ITextStatistics DefaultInstance
+        {
+            get { return new TextStatistics(String.Empty); }
         }
 
         public string Text { get; private set; }
@@ -19,9 +33,13 @@ namespace nText.Core
         public IDictionary<string, int> WordFrequencyDictionary { get; private set; }
         public IDictionary<string, int> PunctuationFrequencyDictionary { get; private set; }
 
-        public ITextStatistics Generate()
+        ITextStatistics ITextStatistics.Build()
         {
-            throw new NotImplementedException();
+            Precondition.EnsureNotNullOrEmpty("Text", Text);
+
+            return null;
         }
+
+        
     }
 }

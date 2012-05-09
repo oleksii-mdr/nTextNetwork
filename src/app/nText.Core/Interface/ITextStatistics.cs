@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace nText.Core
+namespace nText.Core.Interface
 {
     public interface ITextStatistics
     {
@@ -12,6 +12,6 @@ namespace nText.Core
         IDictionary<string, int> WordFrequencyDictionary { get; }
         IDictionary<string, int> PunctuationFrequencyDictionary { get; }
 
-        ITextStatistics Generate();
+        ITextStatistics Build();
     }
 }

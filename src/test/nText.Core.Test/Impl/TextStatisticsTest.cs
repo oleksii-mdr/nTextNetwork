@@ -1,7 +1,9 @@
 using System;
+using nText.Core.Impl;
+using nText.Core.Interface;
 using NUnit.Framework;
 
-namespace nText.Core.Test
+namespace nText.Core.Test.Impl
 {
     [TestFixture]
     public class TextStatisticsTest
@@ -21,6 +23,15 @@ namespace nText.Core.Test
         public void Ctor_ArgumentEmptyString_ArgumentNullException()
         {
             ITextStatistics stats = new TextStatistics(String.Empty);
+            Assert.Fail("Shouldn't reach this code");
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Build_HavingEmptyText_ArgumentNullException()
+        {
+            ITextStatistics stats = new TextStatistics();
+            stats.Build();
             Assert.Fail("Shouldn't reach this code");
         }
     }

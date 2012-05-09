@@ -1,5 +1,7 @@
 using System.IO;
 using nText.Core;
+using nText.Core.Impl;
+using nText.Core.Interface;
 using nText.Core.Test.Util;
 using NUnit.Framework;
 
