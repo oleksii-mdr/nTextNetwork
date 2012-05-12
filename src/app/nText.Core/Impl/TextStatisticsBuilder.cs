@@ -4,16 +4,16 @@ using nText.Core.Util;
 
 namespace nText.Core.Impl
 {
-    public class TextStatisticsBuilder : ITextStatisticsBuilder
+    public class TextStatisticsBuilder : ITextStatisticBuilder
     {
-        public ITextStatistics Build(Stream stream)
+        public ITextStatistic Build(Stream stream)
         {
             Precondition.EnsureNotNull("stream", stream);
 
             IStreamConverter converter = new StreamConverter();
             string txt = converter.ToText(stream);
 
-            ITextStatistics stats = new TextStatistics(txt);
+            ITextStatistic stats = new TextStatistic(txt);
             return stats.Build();
         }
     }

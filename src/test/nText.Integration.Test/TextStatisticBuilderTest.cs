@@ -9,23 +9,23 @@ using NUnit.Framework;
 namespace nText.Integration.Test
 {
     [TestFixture]
-    public class TextStatisticsBuilderTest
+    public class TextStatisticBuilderTest
     {
-        //[TestCase(@"Data\En\1661-8.txt")]
-        //public void Build_TextFile_ValidStatistics(string fName)
-        //{
-        //    TestPrecondition.EnsureFileExist(fName);
-        //    Stream stream = File.OpenRead(fName);
-        //    ITextStatisticsBuilder builder = new TextStatisticsBuilder();
-        //    var actual = builder.Build(stream);
-        //    Assert.IsNotNull(actual);
-        //}
+        [TestCase(@"Data\En\1661-8.txt")]
+        public void Build_TextFile_ValidStatistics(string fName)
+        {
+            TestPrecondition.EnsureFileExist(fName);
+            Stream stream = File.OpenRead(fName);
+            ITextStatisticBuilder builder = new TextStatisticsBuilder();
+            var actual = builder.Build(stream);
+            Assert.IsNotNull(actual);
+        }
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Build_StreamIsNull_ArgumentNullException()
         {
-            ITextStatisticsBuilder builder = new TextStatisticsBuilder();
+            ITextStatisticBuilder builder = new TextStatisticsBuilder();
             builder.Build(null);
             Assert.Fail("Shouldn't reach this code");
         }
@@ -34,7 +34,7 @@ namespace nText.Integration.Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void Build_StreamIsEmpty_ArgumentNullException()
         {
-            ITextStatisticsBuilder builder = new TextStatisticsBuilder();
+            ITextStatisticBuilder builder = new TextStatisticsBuilder();
             builder.Build(new MemoryStream());
             Assert.Fail("Shouldn't reach this code");
         }
@@ -49,7 +49,7 @@ namespace nText.Integration.Test
 
             int max;
             TestPrecondition.EnsureCanParse(str, out max);
-            ITextStatisticsBuilder builder = new TextStatisticsBuilder();
+            ITextStatisticBuilder builder = new TextStatisticsBuilder();
             builder.Build(new MemoryStream(new byte[max + 1]));
             Assert.Fail("Shouldn't reach this code");
         }

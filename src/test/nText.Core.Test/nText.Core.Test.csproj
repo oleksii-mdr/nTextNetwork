@@ -40,7 +40,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Impl\StreamConverterText.cs" />
-    <Compile Include="Impl\TextStatisticsTest.cs" />
+    <Compile Include="Impl\TextStatisticTest.cs" />
     <Compile Include="Util\TestPrecondition.cs" />
   </ItemGroup>
   <ItemGroup>

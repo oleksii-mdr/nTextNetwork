@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace nText.Core.Test.Impl
 {
     [TestFixture]
-    public class TextStatisticsTest
+    public class TextStatisticTest
     {
         //Following a Method_State_Result pattern
 
@@ -14,7 +14,7 @@ namespace nText.Core.Test.Impl
         [ExpectedException(typeof(ArgumentNullException))]
         public void Ctor_ArgumentNull_ArgumentNullException()
         {
-            ITextStatistics stats = new TextStatistics(null);
+            ITextStatistic stats = new TextStatistic(null);
             Assert.Fail("Shouldn't reach this code");
         }
 
@@ -22,7 +22,7 @@ namespace nText.Core.Test.Impl
         [ExpectedException(typeof(ArgumentNullException))]
         public void Ctor_ArgumentEmptyString_ArgumentNullException()
         {
-            ITextStatistics stats = new TextStatistics(String.Empty);
+            ITextStatistic stats = new TextStatistic(String.Empty);
             Assert.Fail("Shouldn't reach this code");
         }
 
@@ -30,7 +30,7 @@ namespace nText.Core.Test.Impl
         [ExpectedException(typeof(ArgumentNullException))]
         public void Build_HavingEmptyText_ArgumentNullException()
         {
-            ITextStatistics stats = new TextStatistics();
+            ITextStatistic stats = new TextStatistic();
             stats.Build();
             Assert.Fail("Shouldn't reach this code");
         }
