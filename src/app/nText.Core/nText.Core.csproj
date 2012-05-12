@@ -35,14 +35,15 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\IStreamConverter.cs" />
-    <Compile Include="Interface\ITextStatistic.cs" />
-    <Compile Include="Interface\ITextStatisticBuilder.cs" />
+    <Compile Include="Exceptions\ObjectIsTooLargeException.cs" />
+    <Compile Include="Interfaces\IStreamConverter.cs" />
+    <Compile Include="Interfaces\ITextStatistic.cs" />
+    <Compile Include="Interfaces\ITextStatisticBuilder.cs" />
     <Compile Include="Impl\TextStatisticsBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Impl\StreamConverter.cs" />
     <Compile Include="Impl\TextStatistic.cs" />
-    <Compile Include="Util\Precondition.cs" />
+    <Compile Include="Utils\Precondition.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,10 @@
 using System;
 using System.Configuration;
 using System.IO;
+using nText.Core.Exceptions;
 using nText.Core.Impl;
-using nText.Core.Interface;
-using nText.Core.Test.Util;
+using nText.Core.Interfaces;
+using nText.Core.Test.Utils;
 using NUnit.Framework;
 
 namespace nText.Integration.Test
@@ -40,8 +41,8 @@ namespace nText.Integration.Test
         }
 
         [Test]
-        [ExpectedException(typeof(OutOfMemoryException))]
-        public void ToText_StreamIsTooLarge_OutOfMemoryException()
+        [ExpectedException(typeof(ObjectIsTooLargeException))]
+        public void ToText_StreamIsTooLarge_ObjectIsTooLargeException()
         {
             IStreamConverter c = new StreamConverter();
             string str = ConfigurationManager

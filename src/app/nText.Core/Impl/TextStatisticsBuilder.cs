@@ -1,6 +1,6 @@
 ﻿using System.IO;
-using nText.Core.Interface;
-using nText.Core.Util;
+using nText.Core.Interfaces;
+using nText.Core.Utils;
 
 namespace nText.Core.Impl
 {

@@ -1,6 +1,6 @@
 using System;
 using nText.Core.Impl;
-using nText.Core.Interface;
+using nText.Core.Interfaces;
 using NUnit.Framework;
 
 namespace nText.Core.Test.Impl

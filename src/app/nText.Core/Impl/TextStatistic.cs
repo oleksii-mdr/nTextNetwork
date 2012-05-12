@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using nText.Core.Interface;
-using nText.Core.Util;
+using nText.Core.Interfaces;
+using nText.Core.Utils;
 
 namespace nText.Core.Impl
 {
@@ -44,6 +44,7 @@ namespace nText.Core.Impl
         public IEnumerable<string> UniqueWords { get; private set; }
         public IDictionary<string, int> WordFrequencyDictionary { get; private set; }
 
+        //TODO there is a lot of space for optimization
         ITextStatistic ITextStatistic.Build()
         {
             Precondition.EnsureNotNullOrEmpty("Text", Text);

@@ -1,6 +1,6 @@
 using System;
 
-namespace nText.Core.Util
+namespace nText.Core.Utils
 {
     internal static class Precondition
     {

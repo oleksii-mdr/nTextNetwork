@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace nText.Core.Test.Util
+namespace nText.Core.Test.Utils
 {
     public static class TestPrecondition
     {

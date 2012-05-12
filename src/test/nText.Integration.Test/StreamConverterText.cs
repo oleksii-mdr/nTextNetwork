@@ -1,8 +1,7 @@
 using System.IO;
-using nText.Core;
 using nText.Core.Impl;
-using nText.Core.Interface;
-using nText.Core.Test.Util;
+using nText.Core.Interfaces;
+using nText.Core.Test.Utils;
 using NUnit.Framework;
 
 namespace nText.Integration.Test

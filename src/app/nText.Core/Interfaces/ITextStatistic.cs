@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 
-namespace nText.Core.Interface
+namespace nText.Core.Interfaces
 {
+    /// <summary>
+    /// Defines static statistics that can be collected from text
+    /// </summary>
     public interface ITextStatistic
     {
         /// <summary>
