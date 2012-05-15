@@ -10,7 +10,7 @@
     <script src="../../Skripts/jit.js" type="text/javascript"></script>
     <script src="../../Skripts/WordsTree.Sample.js" type="text/javascript"></script>
 </head>
-<body>
+<body  onload="init();">
      <div id="container">
         <div id="left-container">
             <div class="text">
