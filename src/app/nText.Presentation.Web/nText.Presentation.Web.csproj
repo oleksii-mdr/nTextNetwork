@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StagingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -54,7 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Skripts\jit.js" />
+    <Content Include="Skripts\WordsTree.Sample.js" />
+    <Content Include="Styles\base.css" />
+    <Content Include="Styles\Treemap.css" />
     <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Staging\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

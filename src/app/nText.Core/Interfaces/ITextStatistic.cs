@@ -95,8 +95,8 @@ namespace nText.Core.Interfaces
         /// <summary>
         /// Implements builder pattern, analyses text for statistics
         /// </summary>
-        /// <returns>Current instance of ITextStatistic, which was build based
-        /// on the Text input
+        /// <returns>Current instance of ITextStatistic, which was built 
+        /// from the Text input
         /// </returns>
         ITextStatistic Build();
     }
