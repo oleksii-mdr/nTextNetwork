@@ -1,5 +1,5 @@
 nTextNetwork - Text analysis library for the .NET platform
-Copyright 2012 Oleksii Mandrychenko
+Copyright 2012 - Author: Oleksii Mandrychenko
 
 ===============================================================================
 	This program is free software: you can redistribute it and/or modify
