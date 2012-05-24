@@ -36,6 +36,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\ObjectIsTooLargeException.cs" />
+    <Compile Include="Impl\DictionarySerrializer.cs" />
+    <Compile Include="Interfaces\IDictionarySerrializer.cs" />
     <Compile Include="Interfaces\IStreamConverter.cs" />
     <Compile Include="Interfaces\ITextStatistic.cs" />
     <Compile Include="Interfaces\ITextStatisticBuilder.cs" />
