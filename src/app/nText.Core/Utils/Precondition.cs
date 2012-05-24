@@ -15,7 +15,7 @@ namespace nText.Core.Utils
         {
             if (argValue == null)
                 throw new ArgumentNullException(argName,
-                    "Precondition violated string is null or empty");
+                    "Precondition violated argument is null or empty");
         }
 
         internal static void EnsureMoreThanZero(string argName, long argValue)
