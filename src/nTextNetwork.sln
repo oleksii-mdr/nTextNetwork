@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nText.Core", "app\nText.Core\nText.Core.csproj", "{09A80809-9649-4315-814F-4BD861312B03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nTextNetwork.Core", "app\nTextNetwork.Core\nTextNetwork.Core.csproj", "{09A80809-9649-4315-814F-4BD861312B03}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{E1B5F5D9-66DE-4E78-9FE5-22653919EE81}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E0CD1B8E-CBC6-4C80-BB1F-2D8280BFB5C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nText.Core.Test", "test\nText.Core.Test\nText.Core.Test.csproj", "{9E4096AE-7A51-4DC0-ACFE-A574190303DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nTextNetwork.Core.Test", "test\nTextNetwork.Core.Test\nTextNetwork.Core.Test.csproj", "{9E4096AE-7A51-4DC0-ACFE-A574190303DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nText.Presentation.Web", "app\nText.Presentation.Web\nText.Presentation.Web.csproj", "{B0B22575-E0F4-4A5E-9B02-2D735DF43C96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nTextNetwork.Presentation.Web", "app\nTextNetwork.Presentation.Web\nTextNetwork.Presentation.Web.csproj", "{B0B22575-E0F4-4A5E-9B02-2D735DF43C96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nText.Integration.Test", "test\nText.Integration.Test\nText.Integration.Test.csproj", "{DF0C2C2A-858A-4400-A224-83AA9598309B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nTextNetwork.Integration.Test", "test\nTextNetwork.Integration.Test\nTextNetwork.Integration.Test.csproj", "{DF0C2C2A-858A-4400-A224-83AA9598309B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
