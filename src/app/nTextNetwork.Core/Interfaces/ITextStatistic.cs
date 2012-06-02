@@ -93,6 +93,23 @@ namespace nTextNetwork.Core.Interfaces
         IDictionary<string, int> WordFrequencyDictionary { get; }
 
         /// <summary>
+        /// Defines a dictionary of unique words with 
+        /// probability of occurance
+        /// separated by whitespace or punctuation literals 
+        /// Excluding: white space, punctuation literals 
+        /// Including: words, new lines and carret returns
+        /// </summary>
+        IDictionary<string, double> WordProbabilityDictionary { get; }
+
+        /// <summary>
+        /// Computes Shannon entropy using 
+        /// H(X) = -SUM( P(Xi) * log2(P(Xi)) )
+        /// </summary>
+        /// <returns>expected value of the information in bits 
+        /// derived from input text</returns>
+        double ShannonEntropy { get; }
+
+        /// <summary>
         /// Implements builder pattern, analyses text for statistics
         /// </summary>
         /// <returns>Current instance of ITextStatistic, which was built 

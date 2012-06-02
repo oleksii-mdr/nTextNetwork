@@ -43,6 +43,9 @@ namespace nTextNetwork.Core.Impl
         public int UniqueWordsCount { get; private set; }
         public IEnumerable<string> UniqueWords { get; private set; }
         public IDictionary<string, int> WordFrequencyDictionary { get; private set; }
+        public IDictionary<string, double> WordProbabilityDictionary { get; private set; }
+
+        public double ShannonEntropy { get; private set; }
 
         //TODO there is a lot of space for optimization
         ITextStatistic ITextStatistic.Build()
@@ -111,6 +114,20 @@ namespace nTextNetwork.Core.Impl
 
             UniqueWords = WordFrequencyDictionary.Keys;
             UniqueWordsCount = UniqueWords.Count();
+
+            int allWordsCount = WordFrequencyDictionary
+                                .Sum(pair => pair.Value);
+
+            WordProbabilityDictionary = (from word in WordFrequencyDictionary
+                                        select word)
+                                        .ToDictionary(
+                                            arg => arg.Key,
+                                            arg => (double)arg.Value / allWordsCount);
+
+            ShannonEntropy = -WordProbabilityDictionary
+                                  .Sum(pair =>
+                                       pair.Value*Math.Log(pair.Value, 2));
+                            
 
             return this;
         }
