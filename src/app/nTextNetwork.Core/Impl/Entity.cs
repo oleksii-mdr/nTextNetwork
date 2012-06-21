@@ -20,14 +20,11 @@ namespace nTextNetwork.Core.Impl
 
     public class Data
     {
-        [JsonProperty("playcount")]
-        public string PlayCount;
+        [JsonProperty("count")]
+        public string Count;
 
         [JsonProperty("$color")]
         public string Color;
-
-        [JsonProperty("image")]
-        public string Image;
 
         [JsonProperty("$area")]
         public int Area;

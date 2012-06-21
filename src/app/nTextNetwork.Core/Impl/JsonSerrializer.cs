@@ -34,8 +34,7 @@ namespace nTextNetwork.Core.Impl
                                 {
                                     Area = item.Value, 
                                     Color = ColorHelper.GetHexColor(), 
-                                    PlayCount = item.Value.ToString(CultureInfo.InvariantCulture),
-                                    Image = "http://userserve-ak.last.fm/serve/300x300/11403219.jpg"
+                                    Count = item.Value.ToString(CultureInfo.InvariantCulture)
                                 };
 
                 child.Data = data;

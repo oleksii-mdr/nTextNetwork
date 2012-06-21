@@ -39,7 +39,7 @@ namespace nTextNetwork.Integration.Test
             TestPrecondition.EnsureFileExist(fName);
             const int count = 100;
 
-            const string expectedJson = "{\"children\":[{\"children\":[{\"children\":[],\"data\":{\"playcount\":\"4513\",\"$color\":\"#8E7032\",\"image\":\"http://userserve-ak.last.fm/serve/300x300/11403219.jpg\",\"$area\":4513},\"id\":\"the\",\"name\":\"the\"}]}]}";
+            const string expectedJson = "{\"children\":[{\"children\":[{\"children\":[],\"data\":{\"count\":\"4513\",\"$color\":\"#8E7032\",\"$area\":4513},\"id\":\"the\",\"name\":\"the\"}]}]}";
 
             //for now file exist in the bin directory
             Stream stream = File.OpenRead(fName);
