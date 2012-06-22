@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DF0C2C2A-858A-4400-A224-83AA9598309B}</ProjectGuid>
+    <ProjectGuid>32c0b8ce-b313-42f1-8a1c-42676eff9772</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nTextNetwork.Integration.Test</RootNamespace>
-    <AssemblyName>nTextNetwork.Integration.Test</AssemblyName>
+    <RootNamespace>nTextNetwork.Text</RootNamespace>
+    <AssemblyName>nTextNetwork.Text</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,41 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\..\lib\test\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JsonSerrializerTest.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StreamConverterText.cs" />
-    <Compile Include="TextStatisticBuilderTest.cs" />
-    <Compile Include="Text\TextReaderTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\En\1661-8.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Ru\16527-8.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\app\nTextNetwork.Core\nTextNetwork.Core.csproj">
-      <Project>{09A80809-9649-4315-814F-4BD861312B03}</Project>
-      <Name>nTextNetwork.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\nTextNetwork.Core.Test\nTextNetwork.Core.Test.csproj">
-      <Project>{9E4096AE-7A51-4DC0-ACFE-A574190303DA}</Project>
-      <Name>nTextNetwork.Core.Test</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\nTextNetwork.Core.Test\App.config">
-      <Link>App.config</Link>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

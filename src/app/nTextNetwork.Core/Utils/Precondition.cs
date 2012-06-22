@@ -4,7 +4,7 @@ namespace nTextNetwork.Core.Utils
 {
     internal static class Precondition
     {
-        internal static void EnsureNotNullOrEmpty(string argName, string argValue) 
+        internal static void EnsureNotNullOrEmpty(string argName, string argValue)
         {
             if (String.IsNullOrEmpty(argValue))
                 throw new ArgumentNullException(argName,
@@ -23,6 +23,14 @@ namespace nTextNetwork.Core.Utils
             if (argValue <= 0)
                 throw new ArgumentNullException(argName,
                     "Precondition violated value is not more that zero");
+        }
+
+        internal static void EnsureIsTrue(string argName, bool condition)
+        {
+            if (!condition)
+                throw new ArgumentException(
+                    "Precondition violated: argument is false, whereas expected true",
+                    argName);
         }
     }
 }
