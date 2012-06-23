@@ -57,6 +57,7 @@
     <Compile Include="Impl\StreamConverter.cs" />
     <Compile Include="Impl\TextStatistic.cs" />
     <Compile Include="Text\TextReader.cs" />
+    <Compile Include="Utils\Postcondition.cs" />
     <Compile Include="Utils\Precondition.cs" />
   </ItemGroup>
   <ItemGroup />

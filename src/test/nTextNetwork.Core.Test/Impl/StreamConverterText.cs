@@ -22,8 +22,8 @@ namespace nTextNetwork.Core.Test.Impl
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ToText_StreamIsEmpty_ArgumentNullException()
+        [ExpectedException(typeof(ArgumentException))]
+        public void ToText_StreamIsEmpty_ArgumentException()
         {
             IStreamConverter c = new StreamConverter();
             c.ToText(new MemoryStream());

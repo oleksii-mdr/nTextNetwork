@@ -32,8 +32,8 @@ namespace nTextNetwork.Integration.Test
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void Build_StreamIsEmpty_ArgumentNullException()
+        [ExpectedException(typeof(ArgumentException))]
+        public void Build_StreamIsEmpty_ArgumentException()
         {
             ITextStatisticBuilder builder = new TextStatisticsBuilder();
             builder.Build(new MemoryStream());

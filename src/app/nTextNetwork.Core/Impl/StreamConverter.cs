@@ -14,7 +14,7 @@ namespace nTextNetwork.Core.Impl
         public string ToText(Stream stream)
         {
             Precondition.EnsureNotNull("stream", stream);
-            Precondition.EnsureMoreThanZero("stream.Length", stream.Length);
+            Precondition.EnsureGreaterThanZero("stream.Length", stream.Length);
 
             using (stream)
             {

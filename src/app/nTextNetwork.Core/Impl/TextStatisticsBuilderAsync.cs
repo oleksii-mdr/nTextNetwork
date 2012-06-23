@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,7 +19,7 @@ namespace nTextNetwork.Core.Impl
         {
             Precondition.EnsureNotNull("stream", stream);
             Precondition.EnsureIsTrue("stream.CanRead", stream.CanRead);
-            Precondition.EnsureMoreThanZero("stream.Length", stream.Length);
+            Precondition.EnsureGreaterThanZero("stream.Length", stream.Length);
 
 
             return BuildAsyncInternal(stream, cancellationToken);
@@ -39,7 +38,6 @@ namespace nTextNetwork.Core.Impl
             CancellationToken cancellationToken)
         {
             int readCount = -1;
-            int startIndex = 0;
             int bufferSize = 1024;
             string chunk;
 
@@ -48,9 +46,8 @@ namespace nTextNetwork.Core.Impl
             while (readCount > 0)
             {
                 readCount = reader.ReadUntilSpace(
-                    startIndex, bufferSize, out chunk);
-                startIndex += readCount;
-
+                    bufferSize, out chunk);
+                
                 cancellationToken.ThrowIfCancellationRequested();
                 
                 break;
