@@ -1,4 +1,6 @@
-<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
+﻿@{
+    ViewBag.Title = "Staging";
+}
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -83,7 +85,8 @@
                 };
             }
         });
-        tm.loadJSON(<%= ViewData["json"] as string %>);
+        @{var data = (string)ViewData["json"];}
+        tm.loadJSON( @data);
         tm.refresh();
         //end
         //add events to radio buttons
@@ -141,41 +144,11 @@
                 You can <b>choose a different tiling algorithm</b> below:
             </div>
             <div id="id-list">
-                <table>
-                    <tr>
-                        <td>
-                            <label for="r-sq">
-                                Squarified
-                            </label>
-                        </td>
-                        <td>
-                            <input type="radio" id="r-sq" name="layout" checked="checked" value="left" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="r-st">
-                                Strip
-                            </label>
-                        </td>
-                        <td>
-                            <input type="radio" id="r-st" name="layout" value="top" />
-                        </td>
-                        <tr>
-                            <td>
-                                <label for="r-sd">
-                                    SliceAndDice
-                                </label>
-                            </td>
-                            <td>
-                                <input type="radio" id="r-sd" name="layout" value="bottom" />
-                            </td>
-                        </tr>
-                </table>
+                    
             </div>
             <a id="back" href="#" class="theme button white">Go to Parent</a>
             <div style="text-align: center;">
-                <a href="../Staging/example1.js">See the Example Code</a></div>
+                </div>
         </div>
         <div id="center-container">
             <div id="infovis">
