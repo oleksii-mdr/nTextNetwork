@@ -17,7 +17,6 @@ using(Stream stream = File.OpenRead("C:\somefile.txt"))
 See it working
 -------------
 Application is deployed to [nTextNetwork](http://ntextnetwork.apphb.com/).
-Testing code is located at [staging](http://ntextnetwork.apphb.com/staging).
 
 Developer corner
 -------------
