@@ -16,7 +16,7 @@ namespace nTextNetwork.Presentation.Web.Test
             dictionary.Add(new KeyValuePair<string, int>("Rabbit", 3));
            
             var serrializer = new JsonSerializerForJit();
-            string json = serrializer.Serialize(dictionary);
+            string json = serrializer.Serialize(dictionary,3);
             Assert.IsNotNullOrEmpty(json);
         }
     }

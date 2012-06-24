@@ -17,21 +17,23 @@ namespace nTextNetwork.Presentation.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(HttpPostedFileBase file)
+        public JsonResult Analyse()
         {
-            if (file.ContentLength > 0)
-            {
-                ITextStatisticBuilder builder = new TextStatisticsBuilder();
-                var stats = builder.Build(file.InputStream);
+            if (Request.Files.Count == 0)
+                return null;
 
-                var iterator = stats.WordFrequencyDictionary.Take(50);
-                var dictionary = iterator.ToDictionary(pair => pair.Key, pair => pair.Value);
+            HttpPostedFileBase file = Request.Files[0];
+            if (file.ContentLength == 0)
+                return null;
+            int countToSerialize = 50;
 
-                ViewData["json"] = new JsonSerializerForJit().Serialize(dictionary);
-                return View();
-            }
+            ITextStatisticBuilder builder = new TextStatisticsBuilder();
+            var stats = builder.Build(file.InputStream);
 
-            return RedirectToAction("Index");
+            var iterator = stats.WordFrequencyDictionary.Take(countToSerialize);
+            var dictionary = iterator.ToDictionary(pair => pair.Key, pair => pair.Value);
+
+            return Json((new JsonSerializerForJit().Serialize(dictionary, countToSerialize)));
         }
     }
 }

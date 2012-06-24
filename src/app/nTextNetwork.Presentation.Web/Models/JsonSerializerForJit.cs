@@ -7,7 +7,7 @@ namespace nTextNetwork.Presentation.Web.Models
 {
     public class JsonSerializerForJit
     {
-        public string Serialize(IDictionary<string, int> dictionary)
+        public string Serialize(IDictionary<string, int> dictionary, int count)
         {
             Precondition.EnsureNotNull("dictionary", dictionary);
 
@@ -19,7 +19,7 @@ namespace nTextNetwork.Presentation.Web.Models
                 Data data = new Data
                 {
                     Area = item.Value,
-                    Color = ColorHelper.GetHexColor(),
+                    Color = ColorHelper.GetHexColor(item.Value,count),
                     Count = item.Value.ToString(CultureInfo.InvariantCulture)
                 };
 

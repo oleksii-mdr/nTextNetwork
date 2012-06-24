@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Analyse";
+}
+
+<script src="../../Skripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+<script src="../../Skripts/jquery.form.js"></script>
+<script src="../../Skripts/initTreeMap.js"></script>
+<script src="../../Skripts/jit.js" type="text/javascript"></script>
+<script src="../../Skripts/formActivation.js"> </script>
+
+<link href="../../Styles/base.css" rel="stylesheet" type="text/css" />
+<link href="../../Styles/Treemap.css" rel="stylesheet" type="text/css" />
+
+@using (Html.BeginForm("Analyse", "Home", FormMethod.Post,
+        new[] { "enctype", "multipart/form-data" }))
+{
+    <input type="file" name="myfile" />
+    <input type="submit" value="Upload" />
+}
+
+<div id="container">
+    <div id="left-container">
+			<div class="text">
+				<h4><a href="https://github.com/oleksii-mdr/nTextNetwork">nTextNetwork</a></h4>
+				
+			This demo shows the top 50 most frequently used words in a text file. Follow these steps to see it working
+			<ol>
+				<li>Browse for a .txt file</li>
+				<li>Click upload</li>				
+			</ol> 
+
+			In a few seconds you should see an image similar to <a href="http://i.imgur.com/yewgu.png">this</a>.
+			</div>
+
+		</div>
+    <div id="center-container">
+        <div id="infovis">
+        </div>
+    </div>
+    <div id="right-container">
+        <div id="inner-details">
+        </div>
+    </div>
+    <div id="log">
+    </div>
+</div>
