@@ -15,7 +15,7 @@ namespace nTextNetwork.Core.Test.Impl
         [ExpectedException(typeof(ArgumentNullException))]
         public void Serrialize_DictionaryIsNull_ArgumentNullException()
         {
-            IJsonSerrializer<Type> serrializer = new JsonSerrializer<Type>();
+            IJsonSerializer<Type> serrializer = new JsonSerializer<Type>();
             serrializer.Serialize(null); //this shall throw an exception
             Assert.Fail("Shouldn't reach this code");
         }
@@ -30,7 +30,7 @@ namespace nTextNetwork.Core.Test.Impl
                 { "c", 40 }
             };
             string expected = "{\"aaa\":100,\"bb\":55,\"c\":40}";
-            var serrializer = new JsonSerrializer<IDictionary<string, int>>();
+            var serrializer = new JsonSerializer<IDictionary<string, int>>();
             var actual = serrializer.Serialize(knownValues);
 
             Assert.AreEqual(expected, actual);
@@ -46,7 +46,7 @@ namespace nTextNetwork.Core.Test.Impl
                 { "c", 40 }
             };
             string testValues = "{\"aaa\":100,\"bb\":55,\"c\":40}";
-            var serrializer = new JsonSerrializer<IDictionary<string, int>>();
+            var serrializer = new JsonSerializer<IDictionary<string, int>>();
             var actual = serrializer.Deserialize(testValues);
 
             Assert.AreEqual(expected, actual);

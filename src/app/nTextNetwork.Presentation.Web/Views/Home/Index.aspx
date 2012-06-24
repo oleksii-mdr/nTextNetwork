@@ -1,6 +1,4 @@
-﻿@{
-    ViewBag.Title = "Staging";
-}
+<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -85,8 +83,7 @@
                 };
             }
         });
-        @{var data = (string)ViewData["json"];}
-        tm.loadJSON( @data);
+        tm.loadJSON(<%= ViewData["json"] as string %>);
         tm.refresh();
         //end
         //add events to radio buttons
@@ -121,7 +118,7 @@
     </script>
 </head>
 <body onload="init();">
-    <div>
+    <div style="margin-bottom: 10px; margin-top: 10px;">
         <form action="" method="post" enctype="multipart/form-data">
         <label for="file">
             Filename:</label>
@@ -132,23 +129,13 @@
     <div id="container">
         <div id="left-container">
             <div class="text">
-                <h4>
-                    Animated Squarified, SliceAndDice and Strip TreeMaps
-                </h4>
-                In this example a static JSON tree is loaded into a Squarified Treemap.<br />
-                <br />
-                <b>Left click</b> to set a node as root for the visualization.<br />
-                <br />
-                <b>Right click</b> to set the parent node as root for the visualization.<br />
-                <br />
-                You can <b>choose a different tiling algorithm</b> below:
+                <h4>To see how it works. </h4>
+                     1. Push the button ChooseFile. 
+                <br/>
+                     2. Select a file.
+                <br/>
+                     3. Press the Upload button.
             </div>
-            <div id="id-list">
-                    
-            </div>
-            <a id="back" href="#" class="theme button white">Go to Parent</a>
-            <div style="text-align: center;">
-                </div>
         </div>
         <div id="center-container">
             <div id="infovis">

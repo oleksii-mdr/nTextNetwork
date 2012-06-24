@@ -7,15 +7,15 @@ namespace nTextNetwork.Core.Text
 {
     public class TextReader : IDisposable
     {
-        private StreamReader reader;
+        private readonly StreamReader _reader;
 
         public TextReader(Stream stream)
         {
             Precondition.EnsureNotNull("stream", stream);
 
-            reader = new StreamReader(stream);
+            _reader = new StreamReader(stream);
 
-            Postcondition.EnsureNotNull("reader", reader);
+            Postcondition.EnsureNotNull("reader", _reader);
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace nTextNetwork.Core.Text
         /// </summary>
         public bool CanRead
         {
-            get { return reader.Peek() != -1; }
+            get { return _reader.Peek() != -1; }
         }
 
         /// <summary>
@@ -40,13 +40,12 @@ namespace nTextNetwork.Core.Text
             Precondition.EnsureGreaterThanZero("minBufferSize", minBufferSize);
 
             //init main buffer
-            char[] buffer = new char[minBufferSize];
+            var buffer = new char[minBufferSize];
             //init buffer used for single char read
-            char[] singleBuffer = new char[1];
+            var singleBuffer = new char[1];
             //init chunk with empty string
-            chunk = String.Empty;
 
-            int readCount = reader.ReadBlock(buffer, 0, minBufferSize);
+            int readCount = _reader.ReadBlock(buffer, 0, minBufferSize);
 
             //last symbol is SPACE
             if (buffer[minBufferSize - 1] == ' ')
@@ -66,13 +65,13 @@ namespace nTextNetwork.Core.Text
             while (true)
             {
                 //peek into next symbol
-                int nextChar = reader.Peek();
+                int nextChar = _reader.Peek();
                 //EOS break the loop
                 if (nextChar == -1)
                     break;
 
                 //read char
-                reader.ReadBlock(singleBuffer, 0, 1);
+                _reader.ReadBlock(singleBuffer, 0, 1);
                 sb.Append(singleBuffer);
                 readCount++;
 
@@ -100,9 +99,9 @@ namespace nTextNetwork.Core.Text
         {
             if (isDisposing)
             {
-                if (reader != null)
+                if (_reader != null)
                 {
-                    reader.Dispose();
+                    _reader.Dispose();
                 }
             }
         }

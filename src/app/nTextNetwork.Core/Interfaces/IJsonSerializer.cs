@@ -1,6 +1,6 @@
 ﻿namespace nTextNetwork.Core.Interfaces
 {
-    public interface IJsonSerrializer<T>
+    public interface IJsonSerializer<T>
     {
         T Deserialize(string json);
         string Serialize(T obj);
