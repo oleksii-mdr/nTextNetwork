@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using Newtonsoft.Json;
 using nTextNetwork.Core.Utils;
+using Newtonsoft.Json;
 
-namespace nTextNetwork.Core.Impl
+namespace nTextNetwork.Presentation.Web.Models
 {
     public class JsonSerializerForJit
     {
@@ -15,8 +15,8 @@ namespace nTextNetwork.Core.Impl
 
             foreach (var item in dictionary)
             {
-                Node child = new Node() { Id = item.Key, Name = item.Key };
-                Data data = new Data()
+                Node child = new Node { Id = item.Key, Name = item.Key };
+                Data data = new Data
                 {
                     Area = item.Value,
                     Color = ColorHelper.GetHexColor(),

@@ -4,7 +4,7 @@ namespace nTextNetwork.Core.Utils
 {
     public class Postcondition
     {
-        internal static void EnsureNotNull<T>(string argName, T argValue)
+        public static void EnsureNotNull<T>(string argName, T argValue)
             where T : class
         {
             if (argValue == null)
@@ -12,7 +12,7 @@ namespace nTextNetwork.Core.Utils
                     "Precondition violated argument is null or empty");
         }
 
-        internal static void EnsureNotNullOrEmpty(string returnValue,
+        public static void EnsureNotNullOrEmpty(string returnValue,
             string argValue)
         {
             if (String.IsNullOrEmpty(argValue))

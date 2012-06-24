@@ -2,9 +2,9 @@ using System;
 
 namespace nTextNetwork.Core.Utils
 {
-    internal static class Precondition
+    public static class Precondition
     {
-        internal static void EnsureNotNullOrEmpty(string argName, 
+        public static void EnsureNotNullOrEmpty(string argName, 
             string argValue)
         {
             if (String.IsNullOrEmpty(argValue))
@@ -12,7 +12,7 @@ namespace nTextNetwork.Core.Utils
                     "Precondition violated string is null or empty");
         }
 
-        internal static void EnsureNotNull<T>(string argName, T argValue) 
+        public static void EnsureNotNull<T>(string argName, T argValue) 
             where T : class
         {
             if (argValue == null)
@@ -20,7 +20,7 @@ namespace nTextNetwork.Core.Utils
                     "Precondition violated argument is null or empty");
         }
 
-        internal static void EnsureGreaterThanZero(string argName, 
+        public static void EnsureGreaterThanZero(string argName, 
             long argValue)
         {
             if (argValue <= 0)
@@ -29,7 +29,7 @@ namespace nTextNetwork.Core.Utils
                     argName);
         }
 
-        internal static void EnsureGreaterOrEqualToZero(string argName, 
+        public static void EnsureGreaterOrEqualToZero(string argName, 
             long argValue)
         {
             if (argValue < 0)
@@ -39,7 +39,7 @@ namespace nTextNetwork.Core.Utils
                     argName);
         }
 
-        internal static void EnsureIsTrue(string argName, bool condition)
+        public static void EnsureIsTrue(string argName, bool condition)
         {
             if (!condition)
                 throw new ArgumentException(

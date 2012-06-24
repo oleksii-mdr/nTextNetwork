@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace nTextNetwork.Core.Impl
+namespace nTextNetwork.Presentation.Web.Models
 {
    public class ColorHelper
     {

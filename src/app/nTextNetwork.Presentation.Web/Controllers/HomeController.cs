@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.Mvc;
 using nTextNetwork.Core.Impl;
 using nTextNetwork.Core.Interfaces;
+using nTextNetwork.Presentation.Web.Models;
 
 namespace nTextNetwork.Presentation.Web.Controllers
 {
