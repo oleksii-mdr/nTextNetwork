@@ -10,26 +10,6 @@ namespace nTextNetwork.Integration.Test.Text
     [TestFixture]
     public class TextReaderTest
     {
-        [TestCase(@"Data\En\1661-8.txt", 1024, 1032)]
-        [TestCase(@"Data\En\1661-8.txt", 1032, 1032)]
-        [TestCase(@"Data\En\1661-8.txt", 1033, 1036)]
-        public void ReadUntilSpace_TextFile_ReadCharsTillSpace(string fName,
-            int minCount, int expectedRead)
-        {
-            TestPrecondition.EnsureFileExist(fName);
-            string chunk;
-            int actual;
-            using (Stream stream = File.OpenRead(fName))
-            {
-                using (var reader = new TextReader(stream))
-                {
-                    actual = reader.ReadUntilSpace(minCount, out chunk);
-                }
-            }
-            Assert.AreEqual(expectedRead, actual);
-            Assert.IsNotNullOrEmpty(chunk);
-        }
-
         [TestCase(@"Data\En\1661-8.txt", -1)]
         [TestCase(@"Data\En\1661-8.txt", 0)]
         [ExpectedException(typeof(ArgumentException))]
