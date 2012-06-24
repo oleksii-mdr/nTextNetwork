@@ -131,7 +131,7 @@
 			<div class="text">
 				<h4><a href="https://github.com/oleksii-mdr/nTextNetwork">nTextNetwork</a></h4>
 				
-			This demo shows the top 50 most frequently used words in a text file. Follow this steps to see it working
+			This demo shows the top 50 most frequently used words in a text file. Follow these steps to see it working
 			<ol>
 				<li>Browse for a .txt file</li>
 				<li>Click upload</li>				
