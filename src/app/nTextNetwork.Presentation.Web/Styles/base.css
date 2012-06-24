@@ -1,128 +1,175 @@
-html, body {
-    margin:0;
-    font-family: "Lucida Grande", Verdana;
+html, body
+{
+    margin: 0;
+    font-family: "Lucida Grande" , Verdana;
     font-size: 0.9em;
     text-align: center;
-    background-color:#F2F2F2;
-    padding: 0px;
+    background-color: #F2F2F2;
+    padding: 50px 0px 10px 0px;
 }
 
-input, select {
-    font-size:0.9em;
+
+
+input, select
+{
+    font-size: 0.9em;
 }
 
-table {
-    margin-top:-10px;
-    margin-left:7px;
+table
+{
+    margin-top: -10px;
+    margin-left: 7px;
 }
 
-h4 {
-    font-size:1.1em;
-    text-decoration:none;
-    font-weight:normal;
-    color:#23A4FF;
+h4
+{
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: normal;
+    color: #23A4FF;
 }
 
-a {
-    color:#23A4FF;
+a
+{
+    color: #23A4FF;
 }
 
-#container {
+div#header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+#container
+{
     width: 1000px;
     height: 600px;
-    margin:0 auto;
-    position:relative;
+    margin: 0 auto;
+    position: relative;
 }
 
-#left-container, 
-#right-container, 
-#center-container {
-    height:600px;
-    position:absolute;
-    top:0;
+#left-container, #right-container, #center-container
+{
+    height: 600px;
+    position: absolute;
+    top: 0;
 }
 
-#left-container, #right-container {
-    width:200px;
-    color:#686c70;
+#left-container, #right-container
+{
+    width: 200px;
+    color: #686c70;
     text-align: left;
     overflow: auto;
-    background-color:#fff;
-    background-repeat:no-repeat;
-    border-bottom:1px solid #ddd;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #ddd;
 }
 
-#left-container {
-    left:0;
-    background-position:center right;
-    border-left:1px solid #ddd;
-    
+#left-container
+{
+    left: 0;
+    background-position: center right;
+    border-left: 1px solid #ddd;
 }
 
-#right-container {
-    right:0;
-    background-image:url('col1.png');
-    background-position:center left;
-    border-right:1px solid #ddd;
+#right-container
+{
+    right: 0;
+    background-image: url('col1.png');
+    background-position: center left;
+    border-right: 1px solid #ddd;
 }
 
-#right-container h4{
-    text-indent:8px;
+#right-container h4
+{
+    text-indent: 8px;
 }
 
-#center-container {
-    width:600px;
-    left:200px;
-    background-color:#1a1a1a;
-    color:#ccc;
+#center-container
+{
+    width: 600px;
+    left: 200px;
+    background-color: #1a1a1a;
+    color: #ccc;
 }
 
-.text {
+.text
+{
+    margin: 7px;
+    color: #686C70;
+}
+
+#inner-details
+{
+    font-size: 0.8em;
+    list-style: none;
     margin: 7px;
 }
 
-#inner-details {
-    font-size:0.8em;
-    list-style:none;
-    margin:7px;
-}
-
-#log {
-    position:absolute;
-    top:10px;
-    font-size:1.0em;
-    font-weight:bold;
-    color:#23A4FF;
+#log
+{
+    position: absolute;
+    top: 10px;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #23A4FF;
 }
 
 
-#infovis {
-    position:relative;
-    width:600px;
-    height:600px;
-    margin:auto;
-    overflow:hidden;
+#infovis
+{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    overflow: hidden;
 }
 
 /*TOOLTIPS*/
-.tip {
+.tip
+{
     color: #111;
     width: 139px;
     background-color: white;
-    border:1px solid #ccc;
-    -moz-box-shadow:#555 2px 2px 8px;
-    -webkit-box-shadow:#555 2px 2px 8px;
-    -o-box-shadow:#555 2px 2px 8px;
-    font-size:10px;
-    font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
-    padding:7px;
+    border: 1px solid #ccc;
+    -moz-box-shadow: #555 2px 2px 8px;
+    -webkit-box-shadow: #555 2px 2px 8px;
+    -o-box-shadow: #555 2px 2px 8px;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    padding: 7px;
 }
 
-    form
-    {
-        display: block;
-        margin: 20px auto;
-        background: #eee;
-        border-radius: 10px;
-        padding: 15px;
-    }
+form
+{
+    display: block;
+    margin: 20px auto;
+    background: #eee;
+    padding: 15px;
+}
+
+.progress
+{
+    display: block;
+    margin: 5px auto;
+    position: relative;
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 1px;
+}
+.bar
+{
+    background-color: #99CCFF;
+    width: 0%;
+    height: 20px;
+}
+.percent
+{
+    position: absolute;
+    display: inline-block;
+    top: 3px;
+    left: 48%;
+}
