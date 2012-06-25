@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using nTextNetwork.Core.Utils;
 using Newtonsoft.Json;
 
@@ -12,19 +14,25 @@ namespace nTextNetwork.Presentation.Web.Models
             Precondition.EnsureNotNull("dictionary", dictionary);
 
             Node root = new Node();
+            int size = dictionary.Count;
 
-            foreach (var item in dictionary)
+            var colors = ColorHelper.GetGradientHexColors(
+                ColorTranslator.FromHtml("#EBEB35"), Color.ForestGreen, Color.Red, size)
+                .ToList();
+
+            for (int i = 0; i < size; i++ )
             {
+                var item = dictionary.ElementAt(i);
+
                 Node child = new Node { Id = item.Key, Name = item.Key };
                 Data data = new Data
                 {
                     Area = item.Value,
-                    Color = ColorHelper.GetHexColor(item.Value,count),
+                    Color = colors[i],
                     Count = item.Value.ToString(CultureInfo.InvariantCulture)
                 };
 
                 child.Data = data;
-
                 root.Children.Add(child);
             }
 
