@@ -13,13 +13,23 @@ namespace nTextNetwork.Integration.Test
     public class TextStatisticBuilderTest
     {
         [TestCase(@"Data\En\1661-8.txt")]
-        public void Build_TextFile_ValidStatistics(string fName)
+        public void Build_TextFile_StatisticsIsNotNull(string fName)
         {
             TestPrecondition.EnsureFileExist(fName);
             Stream stream = File.OpenRead(fName);
             ITextStatisticBuilder builder = new TextStatisticsBuilder();
             var actual = builder.Build(stream);
             Assert.IsNotNull(actual);
+        }
+
+        [TestCase(@"Data\En\1661-8.txt")]
+        public void Build_TextFile_OriginalStreamCanRead(string fName)
+        {
+            TestPrecondition.EnsureFileExist(fName);
+            Stream stream = File.OpenRead(fName);
+            ITextStatisticBuilder builder = new TextStatisticsBuilder();
+            var actual = builder.Build(stream);
+            Assert.IsTrue(stream.CanRead);
         }
 
         [Test]

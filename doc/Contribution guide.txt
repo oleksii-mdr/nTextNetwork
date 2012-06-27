@@ -5,7 +5,23 @@ Everybody is welcome to contribute to this project. In the nearest future I fore
 
 To contribute please make a fork of the current repository and look through the unit-tests that we currently have. Look through the list of issues or contact me to sort out the task. Try to write clear and short code, if the intend is not clear from the variable names and method names try adding brief comments to the code. Once ready to commit to this repository make a standard pull request.
 
-Use Precondition and Postcondition to validate the input and output of the method. For all public methods write unit tests, if possible write them for internal methods as well. 
+Use Precondition and Postcondition to validate the input and output of the method. For all public methods write unit tests, if possible write them for internal methods as well. Sample unit test structure:
+
+[TestFixture]
+public class TemplateTest
+{
+	[Test]
+	public void MethodName_Input_ExpectedOutput()
+	{	
+		// Arrange
+		...
+		
+		// Act
+		...
+		
+		// Assert		
+	}
+}
 
 Try to keep code line length shorter than 80 characters, as it is easy to compare 3 versions of the same file on a single screen.
 
