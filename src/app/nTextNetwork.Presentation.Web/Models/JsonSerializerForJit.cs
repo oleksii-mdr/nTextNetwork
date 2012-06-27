@@ -17,7 +17,10 @@ namespace nTextNetwork.Presentation.Web.Models
             int size = dictionary.Count;
 
             var colors = ColorHelper.GetGradientHexColors(
-                ColorTranslator.FromHtml("#EBEB35"), Color.ForestGreen, Color.Red, size)
+                    //ColorTranslator.FromHtml("#EBEB35"), 
+                    Color.Yellow,
+                    Color.ForestGreen, 
+                    Color.Red, size)
                 .ToList();
 
             for (int i = 0; i < size; i++ )
