@@ -67,7 +67,7 @@
     <Content Include="Scripts\jquery-1.6.2.min.js" />
     <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\initTreeMap.js" />
-    <Content Include="Styles\base.css" />
+   <Content Include="Styles\base.css" />
     <Content Include="Styles\Treemap.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

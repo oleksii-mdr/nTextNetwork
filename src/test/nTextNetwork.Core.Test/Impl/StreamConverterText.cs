@@ -43,5 +43,21 @@ namespace nTextNetwork.Core.Test.Impl
             string actual = c.ToText(new MemoryStream(new byte[max + 1]));
             Assert.Fail("Shouldn't reach this code");
         }
+
+        [Test]
+        public void ToText_Stream_StreamCanRead()
+        {
+            // Arrange
+            IStreamConverter c = new StreamConverter();
+            var random = new Random();
+            var buffer = new byte[1024];
+            random.NextBytes(buffer);
+            var stream = new MemoryStream(buffer);
+            
+            // Act
+            c.ToText(stream);
+
+            Assert.IsTrue(stream.CanRead);
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using nTextNetwork.Core.Impl;
 using nTextNetwork.Core.Interfaces;
@@ -22,18 +21,23 @@ namespace nTextNetwork.Presentation.Web.Controllers
             if (Request.Files.Count == 0)
                 return null;
 
-            HttpPostedFileBase file = Request.Files[0];
-            if (file.ContentLength == 0)
+            var file = Request.Files[0];
+            if (file == null)
                 return null;
-            int countToSerialize = 50;
+            if (file.ContentLength == 0)
+                    return null;
+            const int countToSerialize = 50;
 
             ITextStatisticBuilder builder = new TextStatisticsBuilder();
             var stats = builder.Build(file.InputStream);
 
-            var iterator = stats.WordFrequencyDictionary.Take(countToSerialize);
-            var dictionary = iterator.ToDictionary(pair => pair.Key, pair => pair.Value);
+            var words = stats.WordFrequencyDictionary
+                .Take(countToSerialize)
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
 
-            return Json((new JsonSerializerForJit().Serialize(dictionary, countToSerialize)));
+            var serializer = new JsonSerializerForJit();
+            string serrialized = serializer.Serialize(words, countToSerialize);
+            return Json(serrialized);
         }
     }
 }

@@ -1,0 +1,8 @@
+Release of nTextNetwork
+=======================
+
+0.0.0.1 Alpha (Project launched) 30.06.2012
+Features
+    - Defined API (ITextStatistics) and provided basic implementation
+    - Created web user interface prototype that
+        displays 50 most common words in text    
