@@ -5,10 +5,8 @@ html, body
     font-size: 0.9em;
     text-align: center;
     background-color: #F2F2F2;
-    padding: 50px 0px 10px 0px;
+    padding: 50px 0px 0px 0px;
 }
-
-
 
 input, select
 {
@@ -118,7 +116,6 @@ div#header
     color: #23A4FF;
 }
 
-
 #infovis
 {
     position: relative;
@@ -160,16 +157,38 @@ form
     border: 1px solid #ddd;
     padding: 1px;
 }
+
 .bar
 {
     background-color: #99CCFF;
     width: 0%;
     height: 20px;
 }
+
 .percent
 {
     position: absolute;
     display: inline-block;
     top: 3px;
     left: 48%;
+}
+
+div#footer 
+{
+    margin: 10px;
+    text-align: center;
+}
+
+div#footer ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+
+div#footer li{
+    width:155px;
+    margin-right: 5px;
+    float: inherit;
+    display:inline;        
 }
