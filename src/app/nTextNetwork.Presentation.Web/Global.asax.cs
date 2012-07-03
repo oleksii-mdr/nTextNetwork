@@ -1,6 +1,9 @@
-﻿using System.Web;
+﻿using System.Configuration;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MongoDB.Driver;
+using nTextNetwork.Presentation.Web.Models;
 
 namespace nTextNetwork.Presentation.Web
 {
@@ -25,9 +28,14 @@ namespace nTextNetwork.Presentation.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
+            
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            string connStr = ConfigurationManager.ConnectionStrings["db_ntextnetwork"].ConnectionString;
+            string dbName = ConfigurationManager.AppSettings["db_name"];
+            MongoServer server = MongoServer.Create(connStr);
+            Db.Init(server, dbName);
         }
     }
 }
