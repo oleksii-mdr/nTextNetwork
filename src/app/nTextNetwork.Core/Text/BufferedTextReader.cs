@@ -1,15 +1,17 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using nTextNetwork.Core.Interfaces;
 using nTextNetwork.Core.Utils;
 
 namespace nTextNetwork.Core.Text
 {
-    public class TextReader : IDisposable
+    public class BufferedTextReader : IDisposable, IBufferedTextReader
     {
         private readonly StreamReader _reader;
 
-        public TextReader(Stream stream)
+        public BufferedTextReader(Stream stream)
         {
             Precondition.EnsureNotNull("stream", stream);
 
@@ -19,7 +21,7 @@ namespace nTextNetwork.Core.Text
         }
 
         /// <summary>
-        ///TextReader can read until end of stream reached
+        ///BufferedTextReader can read until end of stream reached
         /// </summary>
         public bool CanRead
         {
@@ -27,15 +29,19 @@ namespace nTextNetwork.Core.Text
         }
 
         /// <summary>
-        /// Reads stream for <paramref name="minBufferSize"/> symbols
-        /// then reads each next char to get to the nearest SPACE char
+        /// Reads stream for <paramref name="minBufferSize"/> symbols then 
+        /// reads each next char to get to the nearest separator char
         /// </summary>
         /// <param name="minBufferSize">read at least this number of chars, 
-        /// if the last char is not SPACE, 
-        /// continue reading till nearest SPACE</param>
+        /// if the last char is not a separator char, continue reading till 
+        /// nearest separator char</param>
         /// <param name="chunk">output string that was read from stream</param>
+        /// <param name="separators">separators are strated looked into when 
+        /// the buffer is full. Once a occurs in a stream the method returns
+        /// </param>
         /// <returns>number of chars read</returns>
-        public int ReadUntilSpace(int minBufferSize, out string chunk)
+        public int Read(int minBufferSize, out string chunk,
+            List<char> separators)
         {
             Precondition.EnsureGreaterThanZero("minBufferSize", minBufferSize);
 
@@ -47,18 +53,20 @@ namespace nTextNetwork.Core.Text
 
             int readCount = _reader.ReadBlock(buffer, 0, minBufferSize);
 
-            //last symbol is SPACE
-            if (buffer[minBufferSize - 1] == ' ')
+            //last symbol
+            char lastChar = buffer[minBufferSize - 1];
+            
+            //last one is a separator
+            if (separators.Contains(lastChar))
             {
-                //we luck, define string and return number of chars read
-                
+                //we are lucky, define string and return number of chars read
                 chunk = new string(buffer);
                 chunk = chunk.TrimEnd('\0');
                 Postcondition.EnsureNotNullOrEmpty("chunk", chunk);
                 return readCount;
             }
 
-            //not SPACE, reading one char at a time
+            //not separator, reading one char at a time
             string bufferString = new string(buffer);
             var sb = new StringBuilder(bufferString);
 
@@ -75,8 +83,8 @@ namespace nTextNetwork.Core.Text
                 sb.Append(singleBuffer);
                 readCount++;
 
-                //if it is SPACE break the loop
-                if ((char)nextChar == ' ')
+                //if it is a separator break the loop
+                if (separators.Contains((char)nextChar))
                     break;
             }
 

@@ -2,35 +2,40 @@ using System;
 using System.IO;
 using System.Text;
 using nTextNetwork.Core.Test.Utils;
+using nTextNetwork.Core.Text;
 using NUnit.Framework;
-using TextReader = nTextNetwork.Core.Text.TextReader;
+using System.Collections.Generic;
 
 namespace nTextNetwork.Integration.Test.Text
 {
     [TestFixture]
-    public class TextReaderTest
+    public class BufferedTextReaderTest
     {
+        private readonly List<char> simpleSeparators = new List<char> { ' ' };
+        
+
         [TestCase(@"Data\En\1661-8.txt", -1)]
         [TestCase(@"Data\En\1661-8.txt", 0)]
         [ExpectedException(typeof(ArgumentException))]
-        public void ReadUntilSpace_ReadCount_Exception(string fName,
+        public void Read_ReadCount_Exception(string fName,
             int invalidReadCount)
         {
             TestPrecondition.EnsureFileExist(fName);
-            string chunk;
-            int actual;
             using (Stream stream = File.OpenRead(fName))
             {
-                using (var reader = new TextReader(stream))
+                using (var reader = new BufferedTextReader(stream))
                 {
-                    actual = reader.ReadUntilSpace(invalidReadCount, out chunk);
+                    string chunk;
+                    
+                    reader.Read(invalidReadCount, out chunk,
+                        simpleSeparators);
                 }
             }
             Assert.Fail("Shouldn't reach this code");
         }
 
         [TestCase(@"Data\En\1661-8.txt")]
-        public void ReadUntilSpace_ReadAll_CountMatch(string fName)
+        public void Read_ReadAll_CountMatch(string fName)
         {
             TestPrecondition.EnsureFileExist(fName);
             int actual = 0;
@@ -40,13 +45,13 @@ namespace nTextNetwork.Integration.Test.Text
             using (Stream stream = File.OpenRead(fName))
             {
                 expected = stream.Length;
-                using (var reader = new TextReader(stream))
+                using (var reader = new BufferedTextReader(stream))
                 {
                     while (reader.CanRead)
                     {
                         string chunk;
-                        int singleRead = reader.ReadUntilSpace(
-                            bufSize, out chunk);
+                        int singleRead = reader.Read(
+                            bufSize, out chunk, simpleSeparators);
 
                         actual += singleRead;
                     }
@@ -68,7 +73,7 @@ namespace nTextNetwork.Integration.Test.Text
         [TestCase(@"Data\Ru\16527-8.txt", 512)]
         [TestCase(@"Data\Ru\16527-8.txt", 1024)]
         [TestCase(@"Data\Ru\16527-8.txt", 10 * 1024)]
-        public void ReadUntilSpace_ReadAll_TextMatch(string fName, int bufferSize)
+        public void Read_ReadAll_TextMatch(string fName, int bufferSize)
         {
             TestPrecondition.EnsureFileExist(fName);
             var sb = new StringBuilder();
@@ -83,12 +88,13 @@ namespace nTextNetwork.Integration.Test.Text
             }
             using (Stream stream = File.OpenRead(fName))
             {
-                using (var reader = new TextReader(stream))
+                using (var reader = new BufferedTextReader(stream))
                 {
                     while (reader.CanRead)
                     {
                         string chunk;
-                        reader.ReadUntilSpace(bufferSize, out chunk);
+                        reader.Read(bufferSize, out chunk,
+                            simpleSeparators);
                         sb.Append(chunk);
                     }
                 }

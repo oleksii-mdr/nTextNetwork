@@ -41,7 +41,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StreamConverterText.cs" />
     <Compile Include="TextStatisticBuilderTest.cs" />
-    <Compile Include="Text\TextReaderTest.cs" />
+    <Compile Include="Text\BufferedTextReaderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\En\1661-8.txt">
