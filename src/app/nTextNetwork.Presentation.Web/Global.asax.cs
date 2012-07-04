@@ -32,10 +32,12 @@ namespace nTextNetwork.Presentation.Web
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
+            //string connStr = ConfigurationManager.ConnectionStrings["db_ntextnetwork"].ConnectionString;
             string connStr = ConfigurationManager.AppSettings["db_ntextnetwork"];
             string dbName = ConfigurationManager.AppSettings["db_name"];
             MongoServer server = MongoServer.Create(connStr);
             Db.Init(server, dbName);
+            
         }
     }
 }
