@@ -1,0 +1,9 @@
+﻿@model nTextNetwork.Presentation.Web.Models.User 
+<div>
+    <ul>
+        @foreach (var id in Model.ListFiles)
+        {
+            <li><a href="#" onclick="getJsonResult('@id.FileId')">@id.FileName </a></li>
+        }
+    </ul>
+</div>

@@ -20,6 +20,5 @@ namespace nTextNetwork.Presentation.Web.Controllers
             //if here all went good
             return View("Index");
         }
-        
     }
 }

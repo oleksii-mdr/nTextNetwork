@@ -3,6 +3,9 @@ using nTextNetwork.Core.Utils;
 
 namespace nTextNetwork.Presentation.Web.Models
 {
+    /// <summary>
+    /// MongoDB persistance.
+    /// </summary>
     public class Db
     {
         public static MongoServer Server { get; private set; }
@@ -22,7 +25,7 @@ namespace nTextNetwork.Presentation.Web.Models
 
         public static void Ping()
         {
-            //thows if fails
+            //throws if fails
             Server.Ping();
         }
     }

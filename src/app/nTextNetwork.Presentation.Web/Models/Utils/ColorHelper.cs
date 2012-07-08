@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace nTextNetwork.Presentation.Web.Models
+namespace nTextNetwork.Presentation.Web.Models.Utils
 {
+    /// <summary>
+    /// Makes colors for boxes of TreeMap control.
+    /// </summary>
     public class ColorHelper
     {
         public static IEnumerable<string> GetGradientHexColors
