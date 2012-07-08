@@ -1,4 +1,4 @@
 The following people contributed to this project
 	injektoxa 
 		https://github.com/oleksii-mdr/nTextNetwork/issues/
-		4, 14, 15
+		4, 14, 15, 18, 20, 21, 22
