@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using nTextNetwork.Presentation.Web.Models;
 using NUnit.Framework;
+using nTextNetwork.Presentation.Web.Models.Utils;
 
 namespace nTextNetwork.Presentation.Web.Test
 {
@@ -16,7 +17,7 @@ namespace nTextNetwork.Presentation.Web.Test
             dictionary.Add(new KeyValuePair<string, int>("Rabbit", 3));
            
             var serrializer = new JsonSerializerForJit();
-            string json = serrializer.Serialize(dictionary,3);
+            string json = serrializer.Serialize(dictionary);
             Assert.IsNotNullOrEmpty(json);
         }
     }

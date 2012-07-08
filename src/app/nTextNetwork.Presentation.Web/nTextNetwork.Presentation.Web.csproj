@@ -63,11 +63,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ColorHelper.cs" />
-    <Compile Include="Models\Data.cs" />
+    <Compile Include="Models\Utils\ColorHelper.cs" />
+    <Compile Include="Models\LightWeight\TreeMapNodeItem.cs" />
     <Compile Include="Models\Db.cs" />
-    <Compile Include="Models\JsonSerializerForJit.cs" />
-    <Compile Include="Models\Node.cs" />
+    <Compile Include="Models\Utils\JsonSerializerForJit.cs" />
+    <Compile Include="Models\LightWeight\LightWeightObject.cs" />
+    <Compile Include="Models\Extensions\TextStatisticsExtension.cs" />
+    <Compile Include="Models\LightWeight\TreeMapNode.cs" />
+    <Compile Include="Models\LightWeight\UploadedFileInfo.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Db\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\UserFiles.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

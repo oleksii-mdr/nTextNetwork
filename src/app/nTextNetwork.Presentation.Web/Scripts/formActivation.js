@@ -8,7 +8,7 @@
         beforeSend: function () {
             status.empty();
             var percentVal = '0%';
-            bar.width(percentVal)
+            bar.width(percentVal);
             percent.html(percentVal);
         },
         uploadProgress: function (event, position, total, percentComplete) {

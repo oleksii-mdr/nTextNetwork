@@ -11,7 +11,7 @@ namespace nTextNetwork.Core.Impl
             Precondition.EnsureNotNull("stream", stream);
 
             IStreamConverter converter = new StreamConverter();
-            string txt = converter.ToText(stream);
+            string txt = converter.ToText(stream).ToLowerInvariant();
 
             ITextStatistic stats = new TextStatistic(txt);
             return stats.Build();
