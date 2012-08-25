@@ -24,8 +24,8 @@ namespace nTextNetwork.Presentation.Web.Models.Utils
             var colors = ColorHelper.GetGradientHexColors(
                 //ColorTranslator.FromHtml("#EBEB35"), 
                 ColorTranslator.FromHtml("#49AFCD"),
-                ColorTranslator.FromHtml("#F89406"),
-                ColorTranslator.FromHtml("#BD362F"),
+                ColorTranslator.FromHtml("#49AFCD"),
+                ColorTranslator.FromHtml("#49AFCD"),
                     //Color.Yellow,
                     //Color.ForestGreen,
                     //Color.Red, 
